@@ -8,7 +8,7 @@ class dashboardcontroller extends Controller
 {
     public function index()
     {
-        return  view('erp');
+        return  view('dashboard');
     }
 }
 
