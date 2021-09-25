@@ -23,7 +23,7 @@
             @include('layouts.navigation')
 
             <!-- Main Sidebar Container -->
-            <aside class="main-sidebar sidebar-dark-warning elevation-2">
+            <aside class="main-sidebar sidebar-dark-primary elevation-2">
                 <!-- Brand Logo -->
                 <a href="/" class="brand-link">
                     <x-application-logo width="36" class="brand-image" />
@@ -34,11 +34,17 @@
                 <div class="sidebar">
                     <!-- Sidebar Menu -->
                     <nav class="mt-2">
-                        <ul class="nav nav-pills nav-sidebar flex-column nav-legacy" data-widget="treeview" role="menu" data-accordion="false">
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                             <!-- Add icons to the links using the .nav-icon class
                                  with font-awesome or any other icon font library -->
 
-                        </ul>
+                        
+                            <li class="nav-item">
+                                <a href="{{ route('') }}" class="nav-link active">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Simple Tables</p>
+                                </a>
+                            </li>
                     </nav>
                     <!-- /.sidebar-menu -->
                 </div>
