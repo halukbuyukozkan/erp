@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dashboardcontroller;
+use App\Http\Controllers\WarehouseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,7 @@ Route::get('/', function (){
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('dashboard',[Dashboardcontroller::class,'index'])->name('dashboard');
-    Route::resource()
+    Route::resource('Warehouse',WarehouseController::class);
 });
 
 require __DIR__ . '/auth.php';
