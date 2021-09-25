@@ -1,7 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use Laravel\Sanctum\Sanctum;
+use App\Http\Controllers\Dashboardcontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,10 +16,13 @@ use Laravel\Sanctum\Sanctum;
 */
 
 
-Route::middleware(['auth:Sanctum','verfied'])->group(function () {
-Route::get('/',function(){
-    return view('adminlte.dashboard');
+Route::get('/', function (){
+    return view('welcome');
 });
 
-
+Route::group(['middleware' => 'auth'], function () {
+    Route::resource('dashboard',Dashboardcontroller::class);
 });
+
+require __DIR__ . '/auth.php';
+
