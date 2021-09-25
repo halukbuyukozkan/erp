@@ -22,6 +22,7 @@ Route::get('/', function (){
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('dashboard',[Dashboardcontroller::class,'index'])->name('dashboard');
+    Route::resource()
 });
 
 require __DIR__ . '/auth.php';
