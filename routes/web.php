@@ -23,8 +23,7 @@ Route::get('/', function (){
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('dashboard',[Dashboardcontroller::class,'index'])->name('dashboard');
-    Route::resource('Warehouse',WarehouseController::class);
-    Route::get('warehouse.warehouse',[WarehouseController::class,'index'])->name('warehouse');
+    Route::resource('warehouse',WarehouseController::class);
 });
 
 require __DIR__ . '/auth.php';
