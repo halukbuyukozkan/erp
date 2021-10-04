@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="h4 font-weight-bold">
-            {{ __('Deporlar') }}
+            {{ __('Depolar') }}
         </h2>
     </x-slot>
 
@@ -33,7 +33,11 @@
                       <th>Date</th>
                       <th>Status</th>
                       <th>Reason</th>
+                      <th>
+                      <a href="{{ route('warehouse.create') }}" class="btn btn-success">Depo Ekle</a>
+                      </th>
                     </tr>
+                    
                   </thead>
                   <tbody>
                     <tr>
