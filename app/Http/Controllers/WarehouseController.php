@@ -14,7 +14,9 @@ class WarehouseController extends Controller
      */
     public function index()
     {
-        return view('warehouse.index');
+        $warehouses = Warehouse::paginate(10);
+
+        return view('warehouse.index',['warehouses'=>$warehouses]);
     }
 
     /**
@@ -35,7 +37,16 @@ class WarehouseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $warehouse = new Warehouse;
+
+        $warehouse->name = $request->name;
+        $warehouse->address = $request->address;
+        $warehouse->active = $request->active;
+        $warehouse->capacity = $request->capacity;
+
+        $warehouse->save();
+
+        return redirect()->route('warehouse.create');
     }
 
     /**
