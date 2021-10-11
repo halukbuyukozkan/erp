@@ -43,6 +43,12 @@
                                     <p>Depolar</p>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="{{ route('material.index') }}" class="nav-link active">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Hammadde</p>
+                                </a>
+                            </li>
                     </nav>
                     <!-- /.sidebar-menu -->
                 </div>
