@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Material;
+use App\Models\Warehouse;
 use Illuminate\Http\Request;
 
 class MaterialController extends Controller
@@ -14,7 +15,9 @@ class MaterialController extends Controller
      */
     public function index()
     {
-        //
+        $materials = Material::paginate(10);
+
+        return view('matrial.index',['material'=>$materials]);
     }
 
     /**
