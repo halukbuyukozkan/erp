@@ -29,12 +29,11 @@
                 <table class="table table-hover text-nowrap">
                   <thead>
                     <tr>
-                      <th>Depo adı</th>
-                      <th>Adres</th>
-                      <th>Durum</th>
-                      <th>Doluluk</th>
+                      <th>Malzeme Adı</th>
+                      <th>Konum</th>
+                      <th>Adet</th>
                       <th>
-                      <a href="{{ route('warehouse.create') }}" class="btn btn-success">Malzeme Ekle</a>
+                      <a href="{{ route('material.create') }}" class="btn btn-success">Malzeme Ekle</a>
                       </th>
                     </tr>  
                   </thead>

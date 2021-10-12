@@ -38,13 +38,13 @@ class MaterialController extends Controller
      */
     public function store(Request $request)
     {
-        $material = new Warehouse;
+        $material = new Material;
         $material->name = $request->name;
         $material->location = $request->location;
         $material->quantity = $request->quantity;
 
         $material->save();
-        return redirect()->route('Material');
+        return redirect()->route('material.create');
     }
 
     /**
