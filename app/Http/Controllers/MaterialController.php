@@ -17,7 +17,7 @@ class MaterialController extends Controller
     {
         $materials = Material::paginate(10);
 
-        return view('matrial.index',['material'=>$materials]);
+        return view('material.index',['materials'=>$materials]);
     }
 
     /**
@@ -38,7 +38,13 @@ class MaterialController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $material = new Warehouse;
+        $material->name = $request->name;
+        $material->location = $request->location;
+        $material->quantity = $request->quantity;
+
+        $material->save();
+        return redirect()->route('Material');
     }
 
     /**
