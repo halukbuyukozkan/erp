@@ -27,7 +27,7 @@ class MaterialController extends Controller
      */
     public function create()
     {
-        //
+        return view('material.create');
     }
 
     /**
