@@ -18,6 +18,7 @@ class CreateMaterialsTable extends Migration
             $table->string('name');
             $table->text('location');
             $table->integer('quantity');
+            $table->integer('type');
             $table->timestamps();
         });
     }

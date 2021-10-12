@@ -42,6 +42,7 @@ class MaterialController extends Controller
         $material->name = $request->name;
         $material->location = $request->location;
         $material->quantity = $request->quantity;
+        $material->type = $request->type;
 
         $material->save();
         return redirect()->route('material.create');
