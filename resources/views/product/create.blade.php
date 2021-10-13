@@ -1,14 +1,14 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="h4 font-weight-bold">
-            {{ __('Malzemeler') }}
+            {{ __('Ürünler') }}
         </h2>
     </x-slot>
 
-    <form action="{{ route('material.store') }}" method="post">
+    <form action="{{ route('product.store') }}" method="post">
         @csrf
         <div class="form-group">
-            <label for="exampleInputEmail1">Malzeme Adı</label>
+            <label for="exampleInputEmail1">Ürün Adı</label>
             <input type="string" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Malzeme Adı Girin">
         </div>
         <div class="form-group">

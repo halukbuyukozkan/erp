@@ -6,6 +6,8 @@ use App\Models\Material;
 use App\Models\Warehouse;
 use Illuminate\Http\Request;
 
+use function PHPSTORM_META\type;
+
 class MaterialController extends Controller
 {
     /**
@@ -15,9 +17,11 @@ class MaterialController extends Controller
      */
     public function index()
     {
-        $materials = Material::paginate(10);
+        $materials = Material::where('type',1)->paginate(10);
+        return view('material.index',[
+            'materials'=>$materials,
+        ]);
 
-        return view('material.index',['materials'=>$materials]);
     }
 
     /**

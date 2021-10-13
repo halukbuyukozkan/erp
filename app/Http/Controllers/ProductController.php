@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Warehouse;
+use App\Models\Material;
 use Illuminate\Http\Request;
 
-class WarehouseController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +14,10 @@ class WarehouseController extends Controller
      */
     public function index()
     {
-        $warehouses = Warehouse::paginate(10);
-
-        return view('warehouse.index',['warehouses'=>$warehouses]);
-
+        $products = Material::where('type',2)->paginate(10);
+        return view('product.index',[
+            'products'=>$products,
+        ]);
     }
 
     /**
@@ -27,7 +27,7 @@ class WarehouseController extends Controller
      */
     public function create()
     {
-        return view('warehouse.create');
+        //
     }
 
     /**
@@ -38,36 +38,34 @@ class WarehouseController extends Controller
      */
     public function store(Request $request)
     {
-        $warehouse = new Warehouse;
+        $product = new Material;
+        $product->name = $request->name;
+        $product->location = $request->location;
+        $product->quantity = $request->quantity;
+        $product->type = $request->type;
 
-        $warehouse->name = $request->name;
-        $warehouse->address = $request->address;
-        $warehouse->active = $request->active;
-        $warehouse->capacity = $request->capacity;
-
-        $warehouse->save();
-
-        return redirect()->route('warehouse.create');
+        $product->save();
+        return redirect()->route('material.create');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Warehouse  $warehouse
+     * @param  \App\Models\Material  $material
      * @return \Illuminate\Http\Response
      */
-    public function show(Warehouse $warehouse)
+    public function show(Material $material)
     {
-        //
+        
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Warehouse  $warehouse
+     * @param  \App\Models\Material  $material
      * @return \Illuminate\Http\Response
      */
-    public function edit(Warehouse $warehouse)
+    public function edit(Material $material)
     {
         //
     }
@@ -76,10 +74,10 @@ class WarehouseController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Warehouse  $warehouse
+     * @param  \App\Models\Material  $material
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Warehouse $warehouse)
+    public function update(Request $request, Material $material)
     {
         //
     }
@@ -87,10 +85,10 @@ class WarehouseController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Warehouse  $warehouse
+     * @param  \App\Models\Material  $material
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Warehouse $warehouse)
+    public function destroy(Material $material)
     {
         //
     }
