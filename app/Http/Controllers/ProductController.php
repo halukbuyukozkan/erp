@@ -27,7 +27,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('product.create');
     }
 
     /**
@@ -42,7 +42,7 @@ class ProductController extends Controller
         $product->name = $request->name;
         $product->location = $request->location;
         $product->quantity = $request->quantity;
-        $product->type = $request->type;
+        $product->type = 2;
 
         $product->save();
         return redirect()->route('material.create');

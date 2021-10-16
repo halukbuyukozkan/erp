@@ -23,10 +23,6 @@
                 <label class="form-check-label" for="exampleCheck1">Check me out</label>
             </li>
         </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Tür</label>
-            <input type="text" name="type" class="form-control" id="exampleInputPassword1" placeholder="Konum">
-        </div>
         <button type="submit" class="btn btn-primary">Kaydet</button>
     </form>
 

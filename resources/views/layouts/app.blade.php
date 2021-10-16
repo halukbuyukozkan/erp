@@ -38,19 +38,19 @@
                             <!-- Add icons to the links using the .nav-icon class
                                  with font-awesome or any other icon font library -->
                             <li class="nav-item">
-                                <a href="{{ route('warehouse.index') }}" class="nav-link active">
+                                <a href="{{ route('warehouse.index') }}" class="nav-link {{ (Route::currentRouteName() == 'warehouse.index') ? 'active' : '' }}">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Depolar</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('material.index') }}" class="nav-link active">
+                                <a href="{{ route('material.index') }}" class="nav-link {{ (Route::currentRouteName() == 'material.index') ? 'active' : '' }}">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Hammadde</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('product.index') }}" class="nav-link active">
+                                <a href="{{ route('product.index') }}" class="nav-link {{ (Route::currentRouteName() == 'product.index') ? 'active' : '' }}">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Ürünler</p>
                                 </a>

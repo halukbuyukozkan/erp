@@ -25,6 +25,7 @@ Route::get('/', function (){
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('dashboard',[Dashboardcontroller::class,'index'])->name('dashboard');
+    Route::resource('warehouse.stock', WarehouseStockController::class);
     Route::resource('warehouse',WarehouseController::class);
     Route::resource('material',MaterialController::class);
     Route::resource('product',ProductController::class);
