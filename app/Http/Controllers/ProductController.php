@@ -40,8 +40,8 @@ class ProductController extends Controller
     {
         $product = new Material;
         $product->name = $request->name;
-        $product->location = $request->location;
-        $product->quantity = $request->quantity;
+        $product->information = $request->information;
+        $product->code = $request->code;
         $product->type = 2;
 
         $product->save();

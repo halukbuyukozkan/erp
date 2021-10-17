@@ -30,8 +30,8 @@
                   <thead>
                     <tr>
                       <th>Ürün Adı</th>
-                      <th>Konum</th>
-                      <th>Adet</th>
+                      <th>Açıklama</th>
+                      <th>Ürün Kodu</th>
                       <th>
                       <a href="{{ route('product.create') }}" class="btn btn-success">Ürün Ekle</a>
                       </th>
@@ -41,8 +41,8 @@
                     @foreach ($products as $product)
                     <tr>
                       <td>{{ $product->name }}</td>
-                      <td>{{ $product->location }}</td>
-                      <td><span class="badge badge-success">{{ $product->quantity }}</span></td>
+                      <td>{{ $product->information }}</td>
+                      <td><span class="badge badge-success">{{ $product->code }}</span></td>
                     </tr>
                     @endforeach
                   </tbody>

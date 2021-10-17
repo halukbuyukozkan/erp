@@ -30,8 +30,8 @@
                   <thead>
                     <tr>
                       <th>Malzeme Adı</th>
-                      <th>Konum</th>
-                      <th>Adet</th>
+                      <th>Açıklama</th>
+                      <th>Malzeme Kodu</th>
                       <th>
                       <a href="{{ route('material.create') }}" class="btn btn-success">Malzeme Ekle</a>
                       </th>
@@ -41,8 +41,8 @@
                     @foreach ($materials as $material)
                     <tr>
                       <td>{{ $material->name }}</td>
-                      <td>{{ $material->location }}</td>
-                      <td><span class="badge badge-success">{{ $material->quantity }}</span></td>
+                      <td>{{ $material->information }}</td>
+                      <td><span class="badge badge-success">{{ $material->code }}</span></td>
                     </tr>
                     @endforeach
                   </tbody>

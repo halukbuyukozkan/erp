@@ -31,7 +31,7 @@
                       <th>Depo adı</th>
                       <th>Adres</th>
                       <th>Durum</th>
-                      <th>Doluluk</th>
+                      <th>Kapasite</th>
                       <th>
                       <a href="{{ route('warehouse.create') }}" class="btn btn-success">Depo Ekle</a>
                       </th>
@@ -40,7 +40,9 @@
                   <tbody>
                     @foreach ($warehouses as $warehouse)
                     <tr>
-                      <td>{{ $warehouse->name }}</td>
+                      <td>
+                      <a href="{{ route('warehouse.stock.index',$warehouse)}}">{{ $warehouse->name }}</a>
+                      </td>
                       <td>{{ $warehouse->address }}</td>
                       <td>{{ $warehouse->active ?'aktif':'pasif'}}</td>
                       <td><span class="badge badge-success">{{ $warehouse->capacity }}</span></td>
