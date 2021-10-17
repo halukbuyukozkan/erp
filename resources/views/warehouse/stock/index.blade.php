@@ -40,7 +40,7 @@
                     <tr>
                       <td>{{ $material->name }}</td>
                       <td>
-                          <input type="number" value="0" name="stock[{{ $material->id }}]">
+                          <input type="number" value= "{{$material->stock->quantity ?? 0}}" name="stock[{{ $material->id }}]">
                       </td>
                     </tr>
                     @endforeach

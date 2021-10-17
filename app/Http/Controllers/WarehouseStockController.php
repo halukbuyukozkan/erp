@@ -17,7 +17,9 @@ class WarehouseStockController extends Controller
      */
     public function index(Warehouse $warehouse)
     {
-        $materials = Material::where('type',1)->paginate(10);
+        $materials = Material::with(['stock' => function ($query) use($warehouse) {
+            $query->where('warehouse_id', $warehouse->id);
+        }])->paginate(10);
         return view('warehouse.stock.index',[
             'materials'=>$materials,
             'warehouse'=>$warehouse
