@@ -9,6 +9,8 @@ class Stock extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+     
     public function material()
     {
         return $this->belongsTo(Material::class);   

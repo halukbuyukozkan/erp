@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Stock;
+use App\Models\Material;
 use App\Models\Warehouse;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,12 @@ class WarehouseStockController extends Controller
      */
     public function index(Warehouse $warehouse)
     {
-        //
+        $materials = Material::where('type',1)->paginate(10);
+        return view('warehouse.stock.index',[
+            'materials'=>$materials,
+            'warehouse'=>$warehouse
+        ]);
+
     }
 
     /**
@@ -39,7 +45,13 @@ class WarehouseStockController extends Controller
      */
     public function store(Request $request, Warehouse $warehouse)
     {
-        //
+        foreach($request->stock as $materialId => $stock){
+            Stock::updateOrCreate(
+                ['warehouse_id' => $warehouse->id, 'material_id' => $materialId],
+                ['quantity' => $stock]
+            );
+        }
+        return redirect()->route('warehouse.stock.index',$warehouse);
     }
 
     /**

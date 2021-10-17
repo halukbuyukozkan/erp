@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\MaterialController;
 use App\Http\Controllers\Dashboardcontroller;
 use App\Http\Controllers\WarehouseController;
+use App\Http\Controllers\WarehouseStockController;
 
 /*
 |--------------------------------------------------------------------------
