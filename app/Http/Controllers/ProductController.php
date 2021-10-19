@@ -38,15 +38,25 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $validated = $request->validate([
+            'name' => ['required', 'unique:materials,name', 'max:100'],
+            'information' => ['required','max:100'],
+            'code' => ['required','max:10'],
+        ]);
+
+
+
         $product = new Material;
-        $product->name = $request->name;
-        $product->information = $request->information;
-        $product->code = $request->code;
+        $product->name = $validated['name'];
+        $product->information = $validated['information'];
+        $product->code = $validated['code'];
         $product->type = 2;
 
         $product->save();
         return redirect()->route('material.create');
     }
+
+        
 
     /**
      * Display the specified resource.
