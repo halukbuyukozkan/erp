@@ -42,10 +42,17 @@ class MaterialController extends Controller
      */
     public function store(Request $request)
     {
+        $validated = $request->validate([
+            'name' => ['required', 'unique:materials,name', 'max:100'],
+            'information' => ['required','max:100'],
+            'code' => ['required','max:10'],
+        ]);
+
+
         $material = new Material;
-        $material->name = $request->name;
-        $material->information = $request->information;
-        $material->code = $request->code;
+        $material->name = $validated['name'];
+        $material->information = $validated['information'];
+        $material->code = $validated['code'];
         $material->type = 1;
 
         $material->save();
